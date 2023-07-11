@@ -1,5 +1,5 @@
 # Here is the calculator in Python
-
+#Taking inputs two numbers
 number1 = float(input("Enter the first number:"))
 number2 = float(input("Enter the second number:"))
 operation = input("Enter the weather you want to solve\nAddition\nSubtraction\nMultiplication\nDivision\n")
