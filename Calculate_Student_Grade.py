@@ -1,3 +1,5 @@
+# The GradeCalculator Function
+
 def GradeCalulator(marks):
     if marks > 100 or marks < 0:
       return 'Invalid Input please range 0 to 100'
