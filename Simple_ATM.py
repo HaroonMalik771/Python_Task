@@ -16,7 +16,7 @@ class ATM:
             self.balance -= amount
             print(f"Successfully withdrew ${amount}. Your new balance is: ${self.balance}")
 
-
+#main function
 def main():
     atm = ATM()
 
