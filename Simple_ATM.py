@@ -35,7 +35,7 @@ def main():
             amount = float(input("Enter the amount to deposit: $"))
             atm.deposit(amount)
         elif choice == "3":
-            amount = float(input("Enter the amount to withdraw: "))
+            amount = float(input("Enter the amount to withdraw: $"))
             atm.withdraw(amount)
         elif choice == "4":
             print("Thank you for using the ATM. Goodbye!")
