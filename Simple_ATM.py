@@ -38,7 +38,7 @@ def main():
             amount = float(input("Enter the amount to withdraw: $"))
             atm.withdraw(amount)
         elif choice == "4":
-            print("Thank you for using the ATM. Goodbye!")
+            print("Thank you for using the ATM. Goodbye")
             break
         else:
             print("Invalid choice. Please try again.")
