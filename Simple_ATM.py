@@ -27,7 +27,7 @@ def main():
         print("3. Withdraw")
         print("4. Exit")
 
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-4) ")
 
         if choice == "1":
             atm.check_balance()
