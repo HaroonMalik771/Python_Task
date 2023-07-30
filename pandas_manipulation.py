@@ -27,3 +27,6 @@ condition = df['shooting'] > df['passing']
 df_filter = df.loc[condition, ['short_name', 'shooting', 'passing']]
 print("Players who have shooting value > passing value:\n", df_filter)
 
+print("list of countries\n",df.nationality.unique())
+print("Total countries\n",df.nationality.nunique())
+
