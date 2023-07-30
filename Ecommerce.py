@@ -22,7 +22,7 @@ english_customers_info = english_customers[['Language','CC Provider','Email']]
 
 # Print the information
 print(english_customers_info)
-
+# simplw method
 
 filtered_buyers = df[(df['CC Provider'] == 'American Express') & (df['Purchase Price'] > 95)][['Email', 'CC Provider', 'Purchase Price']]
 
