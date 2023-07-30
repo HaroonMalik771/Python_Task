@@ -30,3 +30,14 @@ print("Players who have shooting value > passing value:\n", df_filter)
 print("list of countries\n",df.nationality.unique())
 print("Total countries\n",df.nationality.nunique())
 
+# Assuming df is your DataFrame
+# First, let's print the unique values of the 'league_rank' column before replacement
+print(df['league_rank'].unique())
+
+# Replace NaN values with a specified float value (e.g., 0)
+df['league_rank'].fillna(0, inplace=True)
+
+# df.replace('nan',0,inplace=True)
+
+# Now, let's print the unique values of the 'league_rank' column after replacement
+print(df['league_rank'].unique())
