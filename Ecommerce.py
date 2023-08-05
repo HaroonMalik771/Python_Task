@@ -36,7 +36,7 @@ filtered_buyers = df.query("`CC Provider` == 'American Express' and `Purchase Pr
 print(filtered_buyers)
 
 # sum of all rows of customers having American Express card and did purchase than 95 dollars
-#use sum function and value_count() function
+# use sum function and value_count() function
 # display the record of the customers with credit card expiring in 2025
 
 df['Expiry Year'] = pd.to_datetime(df['CC Exp Date'], format='%m/%y').dt.year
