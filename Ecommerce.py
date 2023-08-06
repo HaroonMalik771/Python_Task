@@ -49,3 +49,9 @@ df.drop(columns=['Expiry Year'], inplace=True)
 
 # Print the information
 print(customers_expiring_in_2025)
+
+# RECORDS OF CUSTOMERS HAVING "cc_exp_date" in 2025
+# 1-loc method
+# df.loc[df['CC_Exp_Date'].str.split('/').str[-1] == '25']
+# # 2- query method
+# # df.query("CC_Exp_Date.str.split('/').str[-1] == '25'")
