@@ -11,6 +11,6 @@ sns.barplot(x="total_bill",y="tip",data=df,estimator=np.std)
 plt.show()
 sns.countplot(x='sex',data=df)
 plt.show()
-# box
+
 sns.boxplot(x='day',y='total_bill',data=df,hue='smoker')
 plt.show()
