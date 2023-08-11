@@ -1,34 +1,44 @@
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import LabelEncoder
 
 # Load data from CSV file
-df = pd.read_csv('D:\Python\Python_Task\tip_prediction')  # Replace 'your_data_file.csv' with the actual file name
-
-# Encoding categorical variables (sex and time) using LabelEncoder
-label_encoder = LabelEncoder()
-df['sex_encoded'] = label_encoder.fit_transform(df['sex'])
-df['time_encoded'] = label_encoder.fit_transform(df['time'])
+df = pd.read_csv('D:/Python/Python_Task/tip_prediction/tips.csv')  # Replace with the actual file path
 
 # Create and train the linear regression model
-X = df[['total_bill', 'sex_encoded', 'time_encoded']]
+X = df[['total_bill', 'sex', 'time']]
 y = df['tip']
 model = LinearRegression()
 model.fit(X, y)
 
-# User input for prediction
-total_bill = float(input("Enter the total bill amount: "))
-gender = input("Enter gender (female/male): ").capitalize()
-meal_time = input("Enter meal time (lunch/dinner): ").capitalize()
+while True:
+    try:
+        # User input for prediction
+        total_bill = float(input("Enter the total bill amount: "))
+        if total_bill < 0:
+            print("Total bill amount cannot be negative. Please enter a valid amount.")
+            continue
+        
+        gender_input = int(input("Enter gender (0 for female, 1 for male): "))
+        if gender_input not in [0, 1]:
+            print("Invalid gender input. Please enter 0 for female or 1 for male.")
+            continue
+        
+        meal_time_input = int(input("Enter meal time (0 for lunch, 1 for dinner): "))
+        if meal_time_input not in [0, 1]:
+            print("Invalid meal time input. Please enter 0 for lunch or 1 for dinner.")
+            continue
+        
+        # Make prediction
+        user_input = np.array([[total_bill, gender_input, meal_time_input]])
+        predicted_tip = model.predict(user_input)[0]
+        print(f"Predicted tip: ${predicted_tip:.2f}")
+        break  # Exit the loop if all inputs are valid
+        
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
 
-# Encoding user input
-gender_encoded = label_encoder.transform([gender])[0]
-meal_time_encoded = label_encoder.transform([meal_time])[0]
 
-# Creating input features for prediction
-user_input = np.array([[total_bill, gender_encoded, meal_time_encoded]])
 
-# Make prediction
-predicted_tip = model.predict(user_input)[0]
-print(f"Predicted tip: ${predicted_tip:.2f}")
+
+
