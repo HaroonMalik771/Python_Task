@@ -17,7 +17,7 @@ print('Total CC Provider\n',df['CC Provider'].unique())
 # Filter customers whose language is English
 english_customers = df[df['Language'] == 'en']
 
-# # Select only the 'language' and 'credit_card_provider' columns for English languag
+# # Select only the 'language' and 'credit_card_provider' columns for English language
 english_customers_info = english_customers[['Language','CC Provider','Email']]
 
 # Print the information
