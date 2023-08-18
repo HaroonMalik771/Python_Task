@@ -14,7 +14,7 @@ print('Total Jobs \n',df.Job.nunique())
 print('list of language \n',df.Language.unique())
 print('Total language \n',df.Language.nunique())
 print('Total CC Provider\n',df['CC Provider'].unique())
-# Filter customers whose language is English..
+# Filter customers whose language is English.
 english_customers = df[df['Language'] == 'en']
 
 # # Select only the 'language' and 'credit_card_provider' columns for English language
